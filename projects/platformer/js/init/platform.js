@@ -6,15 +6,17 @@
     
     let platform = window.opspark.platform;
     
-   platform.create(400, 460);
+   platform.create(430, 460);
    platform.create(420, 440);
    platform.create(440, 480);
-   collectable.create(type.max, 400, 460);
-   collectable.create(type.grace, 420, 440);
+   platform.create(410, 420);
+   platform.create(400, 400);
+   collectable.create(type.max, 400, 400);
+   collectable.create(type.grace, 440, 480);
    collectable.create(type.steve, 420, 440);
    cannon.create.onTop(500);
-cannon.create.onLeft(300);
-cannon.create.onRight(400); 
+    cannon.create.onLeft(300);
+    cannon.create.onRight(400);     
    /**
      * init: This function initializes the platforms for the level.
      * 
