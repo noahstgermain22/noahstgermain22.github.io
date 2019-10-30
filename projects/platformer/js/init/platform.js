@@ -1,4 +1,3 @@
-/*eslint-disable no-undef-expression, no-undef*/
 (function (window) {
     'use strict';
     window.opspark = window.opspark || {};
@@ -6,8 +5,7 @@
     
     let platform = window.opspark.platform;
     
-     
-   /**
+    /**
      * init: This function initializes the platforms for the level.
      * 
      * GOAL: Add as many platforms necessary to make your level challenging.
@@ -37,15 +35,11 @@
         platform.create(0, game.world.height - 32, 3, 2);
 
         // example:
-        platform.create(400, 460);
-        platform.create(500, 200);
-        platform.create(430, 460);
-   platform.create(420, 440);
-   platform.create(440, 480);
-   platform.create(410, 420);
-   platform.create(400, 400);
-        
-        
+        platform.create(400, 600);
+        platform.create(100, 500);
+        platform.create(400, 400);
+        platform.create(100, 300);
+        platform.create(400, 200);
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };

@@ -31,13 +31,6 @@
             if (gravity) collectable.body.gravity.y = gravity;
             if (bounce) collectable.body.bounce.y = bounce + Math.random() * 0.2;
         }
-         collectable.create(type.max, 400, 400);
-   collectable.create(type.grace, 440, 480);
-   collectable.create(type.steve, 420, 440);
-   cannon.create.onTop(500);
-    cannon.create.onLeft(300);
-    cannon.create.onRight(400); 
-        
         opspark.collectable.create = create;
     };
 })(window);
