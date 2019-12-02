@@ -1,3 +1,5 @@
+
+/*eslint-disable no-unused-vars */
 (function(){
     'use strict';
     /* global jQuery */
@@ -9,9 +11,11 @@
     var box = jQuery('.box');	// reference to the HTML .box element
     var board = jQuery('.board');	// reference to the HTML .board element
     var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-
+    
     // Every 50 milliseconds, call the update Function (see below)
-    setInterval(update, 50);
+     setInterval(update, 50);
+    
+
     
     // Every time the box is clicked, call the handleBoxClick Function (see below)
     box.on('click', handleBoxClick);
@@ -36,8 +40,8 @@
    var points = 0;
     var speed = 10;
     var positionY = 0;
-    var directionY = 5;
-
+    var directionY = 0;
+    
     /* 
     This Function will be called 20 times/second. Each time it is called,
     it should move the Box to a new location. If the box drifts off the screen
@@ -46,10 +50,10 @@
   
     function update() {
    positionX = positionX + speed;
-  
+  positionY = positionY + speed;
   moveBoxTo(positionX);
     if (positionX > boardWidth) {
-        speed = -speed;
+        speed = points * -3;
 }
     if (positionX < 0){
        speed = points * 3; 
@@ -74,4 +78,5 @@
     speed = points * 3;
     
 }
+   
 })();
