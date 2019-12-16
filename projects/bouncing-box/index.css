@@ -4,12 +4,10 @@
     background-color: red;
     font-size: 300%;
     text-align: center;
-    display: box;
+    display: block;
     position: absolute;
     top: 100px;
-    left: 10px;  /* <--- Change me! */
+    left: 10px;  
 }
-body {
- background-image: url("img_tree.gif"), url("paper.gif");
- background-color: black;
-}
+
+  
