@@ -53,10 +53,10 @@
    positionX = positionX + speed;
   moveBoxTo(positionX);
     if (positionX > boardWidth) {
-        speed = speed * -3;
+        speed = points * -3;
 }
     if (positionX < 0){
-       speed = speed * 3; 
+       speed = points * 3; 
     }
    
     
