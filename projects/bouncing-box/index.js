@@ -40,10 +40,11 @@
    var positionX = 0;
    var points = 0;
     var speed = 10;
-    var positionY = 10;
+    var positionY = 0;
     var directionY = 0;
-    var boardHeight = jQuery(window).height();
-    /* 
+   /* var boardHeight = jQuery(window).height();*/
+    var boardHeight = 300;
+    /*
     This Function will be called 20 times/second. Each time it is called,
     it should move the Box to a new location. If the box drifts off the screen
     turn it around! 
@@ -58,7 +59,19 @@
     if (positionX < 0){
        speed = points * 3; 
     }
+   box.css('top', positionY);
+  
+   positionY = directionY + speed;
+    directionY = positionY + speed; 
    
+    if (positionY > 600){
+        directionY = -speed;
+        
+    }
+    if (positionY < 0){
+        directionY = speed;
+        
+    }
     
 }
  
@@ -71,6 +84,7 @@
     */
     function handleBoxClick() {
      positionX = 0;
+     positionY = 0;
      changeBoxText(1);
       points = points + 1;
     changeBoxText(points);
