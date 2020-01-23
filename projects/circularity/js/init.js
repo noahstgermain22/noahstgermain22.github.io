@@ -37,9 +37,7 @@ var init = function (window) {
       while (loopsCompleted <= 100) {
        drawCircle();
        loopsCompleted++;
-     
-}
-};
+        }
         
         
         ////////////////////////////////////////////////////////////
@@ -63,13 +61,12 @@ var init = function (window) {
          for (var i = 0; i < circles.length; i++) {
                  var eachCircle = circles[i];
                  
-                 physikz.updatePosition(circles[i]);    
-                 game.checkCirclePosition(circles[i]);
+                 physikz.updatePosition(eachCircle);    
+                 game.checkCirclePosition(eachCircle);
          }
            }
     // code to repeat using eachValue
-};
-            
+         
         
     /*global canvas*/
         /* 
@@ -85,7 +82,7 @@ var init = function (window) {
             }
             
             // TODO 5 : YOUR CODE STARTS HERE //////////////////////
-           if (circle.x < 0){
+            if (circle.x < 0){
                circle.x = canvas.width;
            }
            if (circle.y > canvas.height){
@@ -118,7 +115,8 @@ var init = function (window) {
         
         app.addUpdateable(window.opspark.game);
     
-
+};
+}  
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
