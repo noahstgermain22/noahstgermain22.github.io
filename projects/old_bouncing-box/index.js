@@ -11,7 +11,7 @@
     var box = jQuery('.box');	// reference to the HTML .box element
     var board = jQuery('.board');	// reference to the HTML .board element
     var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-    
+    var boardHeight = 600;
     // Every 50 milliseconds, call the update Function (see below)
     var interval = setInterval(update, 50);
     
@@ -37,11 +37,11 @@
     //////////////////////////////////////////////////////////////////
     
     // TODO 2 - Variable declarations 
-   var positionX = 0;
+   var positionX = 10;
    var points = 0;
     var speed = 10;
-    var positionY = 0;
-    var directionY = 0;
+    var positionY = 10;
+    var directionY = 10;
    /* var boardHeight = jQuery(window).height();*/
     
     /*
@@ -52,28 +52,30 @@
     
   
     function update() {
-   positionX = positionX + speed;
-  moveBoxTo(positionX);
-    if (positionX > boardWidth) {
-        speed = points * -3;
-}
-    if (positionX < 0){
-       speed = points * 3; 
-    }
+        positionX = positionX + speed;
+        moveBoxTo(positionX);
+        if (positionX > boardWidth) {
+            speed = points * -3;
+        }
+        if (positionX < 0){
+          speed = points * 3; 
+        }
    
-   box.css('top', positionY);
-   
-   positionY = directionY + speed;
-    directionY = positionY + speed; 
-   
-    if (positionY > 600){
-        directionY = -speed;
         
-    }
-    if (positionY < 0){
-        directionY = speed;
-        
-    }
+   
+        positionY = positionY + speed;
+        directionY = directionY + speed; 
+     //   moveBoxTo(positionY);
+        // if (positionY > boardHeight){
+       //     speed = points * -3;
+           // 
+       //  }
+       //  if (positionY < 0){
+      //       speed = points * 3;
+         // 
+      //  }
+    
+    
     
 }
  
@@ -85,8 +87,8 @@
     the left side of the screen.
     */
     function handleBoxClick() {
-     positionX = 0;
-     positionY = 0;
+     positionX = 10;
+     positionY = 10;
      changeBoxText(1);
       points = points + 1;
     changeBoxText(points);

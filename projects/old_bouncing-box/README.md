@@ -19,7 +19,7 @@
 
 We're going to create a simple game where a box moves across the screen at an increased speed after each click.
 
-<a href="https://output.jsbin.com/goyuhod" target="_blank"> When you are done it should look like this (Right Click --> Open in new tab) </a>
+<a href="https://output.jsbin.com/rupejif" target="_blank"> When you are done it should look like this (Right Click --> Open in new tab) </a>
 
 Our goal for this game is to learn how to bring together HTML, CSS, and JavaScript. We use HTML to define our structure, CSS to define the style of that structure, and JavaScript in order to implement behavior. One of the primary ways we can implement behavior in JavaScript is by making modifications to the HTML and CSS in response to **events** which we will demonstrate by making this simple game. 
 
@@ -102,7 +102,7 @@ Using the `jQuery()` Function we can instead change the CSS with JavaScript code
 
 In this first step, we'll see how can manually move the box using CSS.
 
-**FIND:** The `<style>` tag within the `index.html`file. Here, the CSS that styles the box is defined. 
+**FIND:** Now open the `index.css` file. Here, the CSS that styles the box is defined. 
 
 **CODE:** Change the `left` CSS property to the following values one at a time. For each value, observe where the box ends up:
 - `200px`
@@ -121,7 +121,7 @@ The `left` property determines how far from the _left_ side of the screen the bo
 
 CSS allows us to hard code a starting position for the box. If we want the position of the box to change continuously, we'll need to use JavaScript.
 
-**FIND:** The `<script>` tag within the `index.html` file. Then, find the `moveBoxTo` Function (around **line 47**). It looks like this:
+**FIND:** Open the `index.js` file. Then, find the `moveBoxTo` Function (around **line 20**). It looks like this:
 
 ```js
 function moveBoxTo(newPositionX) {
@@ -381,6 +381,7 @@ Now that we can keep track of how many times we've clicked on the box, we also w
 function update() {
     positionX = positionX + 10;
     moveBoxTo(positionX);
+    
 };
 ```
 
@@ -497,35 +498,24 @@ You've written your first game! Here are some ways you can try and make your gam
 
 ### Challenge 2) Can you move the box up and down?
 Hints: 
-1) Completing this challenge will require us to create new Variables to track the *vertical* `positionY` and `speedY` of the box. Create these new Variables:
+1) Completing this challenge will require us to create new Variables to track the *vertical* `positionY` and `directionY` of the box. Create these new Variables:
 
 ```javascript
 var positionY;
-var speedY;
+var directionY;
 ```
     
-2) We will need to dynamically change the vertical position of the box. To do so we can modify the `moveBoxTo` function to adjust the `top` CSS property of the box and set it to the value of a `newPositionY`:
+2) We will need to dynamically change the vertical position of the box. To do so we can modify the `top` CSS property of the box and set it to the value of `positionY`:
 
 ```javascript
-function moveBoxTo(newPositionX, newPositionY) {
-    box.css('left', newPositionX);
-    box.css('top', newPositionY);
-}
+box.css('top', positionY);
 ```        
-
-3) Then, when we call `moveBoxTo()` inside the `update` function, we add `positionY` as a second argument:
-
-```js
-moveBoxTo(positionX, positionY);
-```
     
-4) To know when the box hits the bottom of the screen we will need a Variable to calculate the height of the window, at the top where you declare your Variables add:
+2) To know when the box hits the bottom of the screen we will need a Variable to calculate the height of the window, at the top where you declare your Variables add:
 
 ```javascript
 var boardHeight = jQuery(window).height(); 
 ```
-
-5) You'll need to make a few more changes to get the vertical behavior to mimic the horizontal behavior. Can you figure it out on your own?
     
 ### Challenge 3) Can you make the box start at a random location on every click?
 
